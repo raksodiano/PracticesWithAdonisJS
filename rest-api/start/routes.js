@@ -19,3 +19,11 @@ const Route = use('Route')
 Route.get('/', () => {
   return { greeting: 'Hello world in JSON' }
 })
+
+Route.group(() => { 
+  Route.post('/User/Save', 'UserController.store');
+}).prefix('apiRest');
+
+Route.group(() => { 
+  Route.post('/User/Save', 'UserController.store');
+}).prefix('apiRest/admin');
